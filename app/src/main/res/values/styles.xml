@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--If necessary, then add below line to make status bar transparent-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="fontFamily">@font/worksans_regular</item>
+        <item name="android:buttonStyle">@style/NoShadowButton</item>
+    </style>
+
+    <style name="worksansmedium" parent="@android:style/TextAppearance">
+        <item name="fontFamily">@font/worksans_medium</item>
+    </style>
+
+    <style name="NoShadowButton" parent="android:style/Widget.Button">
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

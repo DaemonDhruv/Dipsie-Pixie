@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBase"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginTop="86dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_dixiepixie_logo" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="70dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_img">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="0dp"
+                android:paddingBottom="70dp">
+
+                <TextView
+                    android:id="@+id/lbl_dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="54dp"
+                    android:text="@string/lbl_dp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edt_dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:textColorHint="@color/colorAccent"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/lbl_dp"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_dp" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0.2dp"
+                    android:layout_height="110dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="54dp"
+                    android:text="@string/lbl_px"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/divider"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edt_px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ems="3"
+                    android:inputType="number"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/lbl_px"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_px" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/heading_dpi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/worksans_medium"
+                    android:text="@string/heading_dpi"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dhruvbindoria.dipsiepixie.ConstraintRadioGroup
+                    android:id="@+id/constraintRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/heading_dpi">
+
+                    <RadioButton
+                        android:id="@+id/btn_dpi_1"
+                        android:layout_width="48dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="40dp"
+                        android:height="28dp"
+                        android:background="@drawable/rdbtn_selector_dpi"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/btn_dpi_1"
+                        android:textColor="@drawable/checked_text_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/heading_dpi" />
+
+                    <RadioButton
+                        android:id="@+id/btn_dpi_2"
+                        android:layout_width="48dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/rdbtn_selector_dpi"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/btn_dpi_2"
+                        android:textColor="@drawable/checked_text_color"
+                        app:layout_constraintStart_toEndOf="@+id/btn_dpi_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/btn_dpi_3"
+                        android:layout_width="48dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/rdbtn_selector_dpi"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/btn_dpi_3"
+                        android:textColor="@drawable/checked_text_color"
+                        app:layout_constraintStart_toEndOf="@+id/btn_dpi_2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/btn_dpi_4"
+                        android:layout_width="48dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rdbtn_selector_dpi"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/btn_dpi_4"
+                        android:textColor="@drawable/checked_text_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_dpi_1" />
+
+                    <RadioButton
+                        android:id="@+id/btn_dpi_5"
+                        android:layout_width="48dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rdbtn_selector_dpi"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/btn_dpi_5"
+                        android:textColor="@drawable/checked_text_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_dpi_4"
+                        app:layout_constraintStart_toEndOf="@+id/btn_dpi_4"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_dpi_2" />
+
+                    <RadioButton
+                        android:id="@+id/btn_dpi_6"
+                        android:layout_width="48dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rdbtn_selector_dpi"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/btn_dpi_6"
+                        android:textColor="@drawable/checked_text_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_dpi_5"
+                        app:layout_constraintStart_toEndOf="@+id/btn_dpi_5"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_dpi_3" />
+
+
+                </com.dhruvbindoria.dipsiepixie.ConstraintRadioGroup>
+
+                <EditText
+                    android:id="@+id/edt_dpi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ems="2"
+                    android:inputType="number"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/lbl_dpi"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_dpi" />
+
+                <TextView
+                    android:id="@+id/lbl_dpi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="@string/lbl_dpi"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraintRadioGroup"
+                    app:layout_constraintStart_toEndOf="@+id/constraintRadioGroup"
+                    app:layout_constraintTop_toTopOf="@+id/constraintRadioGroup" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_cal"
+        android:layout_width="174dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/btn_selector_cal"
+        android:text="@string/btn_cal"
+        android:textAllCaps="false"
+        android:textColor="@drawable/pressed_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

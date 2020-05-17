@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Dipsie Pixie</string>
+    <string name="lbl_dp">dp:</string>
+    <string name="lbl_px">px:</string>
+    <string name="lbl_dpi">dpi:</string>
+    <string name="heading_dpi">choose screen dpi</string>
+    <string name="btn_dpi_1">120</string>
+    <string name="btn_dpi_2">160</string>
+    <string name="btn_dpi_3">240</string>
+    <string name="btn_dpi_4">320</string>
+    <string name="btn_dpi_5">480</string>
+    <string name="btn_dpi_6">640</string>
+    <string name="btn_cal">Calculate</string>
+</resources>
