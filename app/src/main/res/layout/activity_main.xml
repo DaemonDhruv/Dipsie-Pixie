@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBase"
+    android:focusable="true"
     tools:context=".MainActivity">
 
 
@@ -34,6 +35,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,6 +65,8 @@
                     android:layout_marginStart="16dp"
                     android:ems="3"
                     android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:textAlignment="center"
                     android:textColorHint="@color/colorAccent"
                     app:layout_constraintBaseline_toBaselineOf="@+id/lbl_dp"
                     app:layout_constraintStart_toEndOf="@+id/lbl_dp" />
@@ -97,6 +101,8 @@
                     android:layout_marginStart="16dp"
                     android:ems="3"
                     android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:textAlignment="center"
                     app:layout_constraintBaseline_toBaselineOf="@+id/lbl_px"
                     app:layout_constraintStart_toEndOf="@+id/lbl_px" />
 
@@ -121,7 +127,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.dhruvbindoria.dipsiepixie.ConstraintRadioGroup
+                <in.daemondhruv.customviewgroup.ConstraintRadioGroup
                     android:id="@+id/constraintRadioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -141,6 +147,7 @@
                         android:gravity="center"
                         android:text="@string/btn_dpi_1"
                         android:textColor="@drawable/checked_text_color"
+                        android:onClick="setDpi"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/heading_dpi" />
 
@@ -154,6 +161,7 @@
                         android:gravity="center"
                         android:text="@string/btn_dpi_2"
                         android:textColor="@drawable/checked_text_color"
+                        android:onClick="setDpi"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_1"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -167,6 +175,7 @@
                         android:gravity="center"
                         android:text="@string/btn_dpi_3"
                         android:textColor="@drawable/checked_text_color"
+                        android:onClick="setDpi"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_2"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -181,6 +190,7 @@
                         android:gravity="center"
                         android:text="@string/btn_dpi_4"
                         android:textColor="@drawable/checked_text_color"
+                        android:onClick="setDpi"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/btn_dpi_1" />
 
@@ -196,6 +206,7 @@
                         android:gravity="center"
                         android:text="@string/btn_dpi_5"
                         android:textColor="@drawable/checked_text_color"
+                        android:onClick="setDpi"
                         app:layout_constraintBottom_toBottomOf="@+id/btn_dpi_4"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_4"
                         app:layout_constraintTop_toBottomOf="@+id/btn_dpi_2" />
@@ -211,20 +222,24 @@
                         android:gravity="center"
                         android:text="@string/btn_dpi_6"
                         android:textColor="@drawable/checked_text_color"
+                        android:onClick="setDpi"
                         app:layout_constraintBottom_toBottomOf="@+id/btn_dpi_5"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_5"
                         app:layout_constraintTop_toBottomOf="@+id/btn_dpi_3" />
 
 
-                </com.dhruvbindoria.dipsiepixie.ConstraintRadioGroup>
+                </in.daemondhruv.customviewgroup.ConstraintRadioGroup>
 
                 <EditText
                     android:id="@+id/edt_dpi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:ems="2"
+                    android:ems="3"
                     android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/lbl_dpi"
                     app:layout_constraintStart_toEndOf="@+id/lbl_dpi" />
 
@@ -254,6 +269,7 @@
         android:background="@drawable/btn_selector_cal"
         android:text="@string/btn_cal"
         android:textAllCaps="false"
+        android:onClick="calculate"
         android:textColor="@drawable/pressed_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
