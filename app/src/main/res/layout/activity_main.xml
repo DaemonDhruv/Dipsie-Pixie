@@ -13,10 +13,10 @@
         android:id="@+id/logo_img"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/ic_dixiepixie_logo" />
 
     <androidx.core.widget.NestedScrollView
@@ -145,9 +145,9 @@
                         android:background="@drawable/rdbtn_selector_dpi"
                         android:button="@null"
                         android:gravity="center"
+                        android:onClick="setDpi"
                         android:text="@string/btn_dpi_1"
                         android:textColor="@drawable/checked_text_color"
-                        android:onClick="setDpi"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/heading_dpi" />
 
@@ -159,9 +159,9 @@
                         android:background="@drawable/rdbtn_selector_dpi"
                         android:button="@null"
                         android:gravity="center"
+                        android:onClick="setDpi"
                         android:text="@string/btn_dpi_2"
                         android:textColor="@drawable/checked_text_color"
-                        android:onClick="setDpi"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_1"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -173,9 +173,9 @@
                         android:background="@drawable/rdbtn_selector_dpi"
                         android:button="@null"
                         android:gravity="center"
+                        android:onClick="setDpi"
                         android:text="@string/btn_dpi_3"
                         android:textColor="@drawable/checked_text_color"
-                        android:onClick="setDpi"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_2"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -188,9 +188,9 @@
                         android:background="@drawable/rdbtn_selector_dpi"
                         android:button="@null"
                         android:gravity="center"
+                        android:onClick="setDpi"
                         android:text="@string/btn_dpi_4"
                         android:textColor="@drawable/checked_text_color"
-                        android:onClick="setDpi"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/btn_dpi_1" />
 
@@ -204,9 +204,9 @@
                         android:button="@null"
                         android:checked="true"
                         android:gravity="center"
+                        android:onClick="setDpi"
                         android:text="@string/btn_dpi_5"
                         android:textColor="@drawable/checked_text_color"
-                        android:onClick="setDpi"
                         app:layout_constraintBottom_toBottomOf="@+id/btn_dpi_4"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_4"
                         app:layout_constraintTop_toBottomOf="@+id/btn_dpi_2" />
@@ -220,9 +220,9 @@
                         android:background="@drawable/rdbtn_selector_dpi"
                         android:button="@null"
                         android:gravity="center"
+                        android:onClick="setDpi"
                         android:text="@string/btn_dpi_6"
                         android:textColor="@drawable/checked_text_color"
-                        android:onClick="setDpi"
                         app:layout_constraintBottom_toBottomOf="@+id/btn_dpi_5"
                         app:layout_constraintStart_toEndOf="@+id/btn_dpi_5"
                         app:layout_constraintTop_toBottomOf="@+id/btn_dpi_3" />
@@ -267,13 +267,20 @@
         android:layout_height="40dp"
         android:layout_marginBottom="112dp"
         android:background="@drawable/btn_selector_cal"
+        android:onClick="calculate"
         android:text="@string/btn_cal"
         android:textAllCaps="false"
-        android:onClick="calculate"
         android:textColor="@drawable/pressed_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="66dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

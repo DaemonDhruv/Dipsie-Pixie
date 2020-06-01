@@ -9,6 +9,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatRadioButton
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -53,18 +54,59 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
                 R.id.edt_dp -> {
                     isDpSelected = true
                     isPxSelected = false
-                    mDp = edt_dp.text.toString().toFloat()
+
+                    //Tried solving the problem using scope function: let {}
+                    edt_dp?.text.toString().trim().let {
+                        if (it.isNullOrEmpty()) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Don't leave field empty",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            edt_dp.setText(mDp.toString())
+                        } else {
+                            mDp = it.toFloat()
+                        }
+                    }
+                    // mDp = edt_dp.text.toString().toFloat()
                 }
                 R.id.edt_px -> {
                     isPxSelected = true
                     isDpSelected = false
-                    mPx = edt_px.text.toString().toFloat()
+
+                    edt_px?.text.toString().trim().let {
+                        if (it.isNullOrEmpty()) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Don't leave field empty",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            edt_px.setText(mPx.toString())
+                        } else {
+                            mPx = it.toFloat()
+                        }
+                    }
+                    //mPx = edt_px.text.toString().toFloat()
+
                 }
                 R.id.edt_dpi -> {
-                    val dpi: Int = edt_dpi.text.toString().toInt()
+                    var dpi: Int = -1
+                    edt_dpi?.text.toString().trim().let {
+                        if (it.isNullOrEmpty()) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Don't leave field empty",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            edt_dpi.setText(mDpi.toString())
+                        } else {
+                            dpi = it.toInt()
+                        }
+                    }
+
                     if (dpi > 0) {
                         constraintRadioGroup.clearCheck()
-                        mDpi = edt_dpi.text.toString().toInt()
+                        //mDpi = edt_dpi.text.toString().toInt()
                         //Try highlighting the button corresponding to the dpi if it matches any of the button.
                     }
                 }
